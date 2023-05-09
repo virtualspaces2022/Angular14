@@ -1,0 +1,26 @@
+<!--<div class="stock-container"  *ngFor="let st of stock; index as i; trackBy:trackStockByCode; even as isEven;"  >
+   
+    <div   class="name"    ><h3>{{st.name}}</h3>-<h4>({{st.code}})</h4></div>
+  <div class="price" [class]="st.isPostiveChange()?'positive':'negative'">RM {{st.price}}</div>v-->
+  <!-- <div class="price" [ngStyle]="stockStyles">RM {{st.price}}</div> -->
+ <!--  <div class="price"
+ [class.positive]="st.isPostiveChange()"
+ [class.negative]="st.isPostiveChange()">RM {{st.price}}</div> -->
+<div class="stock-container">
+    <div   class="name"    ><h3>{{stock.name}}</h3>-<h4>({{stock.code}})</h4></div>
+    <div class="price" [class]="stock.isPostiveChange()?'positive':'negative'">RM {{stock.price}}</div>
+    <ng-content></ng-content>
+ <div *ngIf="stock.favorite"> 
+    <!--<div template="ngIf stock.favorite">-->
+    <button>Remove from favorite</button>
+     <!-- <ng-templete [ngIf]="stock.favorite">    <button>Remove from favorite</button>  </ng-template> -->
+ </div>
+<div>
+  <!-- <button (click)="toggleFav($event)" *ngIf="!stock.favorite">Add to favorite</button>
+    <button (click)="changeStockPrice()">Change Price</button>--> 
+</div>
+</div>
+
+
+
+
